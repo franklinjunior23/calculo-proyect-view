@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { BridgeSceneComponent } from './features/bridge-scene/bridge-scene.component';
 import { DataPanelComponent } from './features/data-panel/data-panel.component';
-import { TitleBlockComponent } from './features/title-block/title-block.component';
 import { UiStateService } from './core/services/ui-state.service';
 
 const ASIDE_BASE_CLASSES =
@@ -10,11 +9,11 @@ const ASIDE_BASE_CLASSES =
   'max-lg:border-l-0 max-lg:border-t max-lg:shadow-[0_-6px_24px_rgba(15,40,60,0.18)] ' +
   'max-lg:transition-transform max-lg:duration-300 max-lg:ease-out lg:w-[340px]';
 
-/** Layout raíz: header técnico, escena 3D + panel de datos, y cajetín inferior. */
+/** Layout raíz: header técnico y escena 3D + panel de datos. */
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [BridgeSceneComponent, DataPanelComponent, TitleBlockComponent],
+  imports: [BridgeSceneComponent, DataPanelComponent],
   templateUrl: './app.component.html',
 })
 export class AppComponent {
