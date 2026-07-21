@@ -1,0 +1,38 @@
+<div class="flex h-dvh w-full flex-col bg-surface">
+  <header
+    class="flex flex-none items-center justify-between gap-4 border-b border-blueprint/30 bg-panel px-5 py-3"
+  >
+    <div class="flex min-w-0 items-center gap-3">
+      <span class="text-xl text-steel">⟶</span>
+      <div class="min-w-0">
+        <h1 class="truncate font-heading text-base text-slate-800">
+          Simulador 3D · Puente Vehicular
+        </h1>
+        <p class="truncate font-mono text-[0.68rem] text-blueprint/80">
+          Aplicación de integrales múltiples en el cálculo de volúmenes
+        </p>
+      </div>
+    </div>
+    <button
+      type="button"
+      class="flex-none rounded bg-blueprint px-3.5 py-2 font-mono text-xs font-bold text-white lg:hidden"
+      (click)="uiState.togglePanel()"
+    >
+      {{ uiState.panelOpen() ? 'Cerrar datos' : 'Ver datos' }}
+    </button>
+  </header>
+
+  <main class="relative flex min-h-0 flex-1">
+    <section class="min-w-0 flex-1">
+      <app-bridge-scene></app-bridge-scene>
+    </section>
+
+    <aside [class]="asideClasses()">
+      <app-data-panel></app-data-panel>
+    </aside>
+  </main>
+
+  <footer class="flex-none">
+    <app-title-block></app-title-block>
+  </footer>
+</div>
